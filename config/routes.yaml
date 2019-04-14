@@ -1,0 +1,3 @@
+#index:
+#    path: /
+#    controller: App\AcmeBundle\Controller\DefaultController::index
