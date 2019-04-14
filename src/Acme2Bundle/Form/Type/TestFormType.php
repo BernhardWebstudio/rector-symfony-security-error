@@ -1,8 +1,8 @@
 <?php
 
-namespace App\AcmeBundle\Form;
+namespace App\Acme2Bundle\Form\Type;
 
-use App\AcmeBundle\Entity\Test;
+use App\Acme2Bundle\Entity\Test;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;

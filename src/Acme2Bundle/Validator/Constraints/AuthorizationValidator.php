@@ -1,8 +1,7 @@
 <?php
 
-namespace App\AcmeBundle\Validator\Constraints;
+namespace App\Acme2Bundle\Validator\Constraints;
 
-use Carbon\Traits\Test;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\ConstraintValidator;
@@ -23,15 +22,13 @@ class AuthorizationValidator extends ConstraintValidator
 
     public function validate($test, Constraint $constraint): void
     {
-        if (!($test instanceof Test)) {
-            return;
-        }
-
         if ($this->security->isGranted('TEST_ADD')) {
             return;
         }
 
-        $this->context->buildViolation($constraint->message)
-            ->addViolation();
+        if (!$this->security->isGranted('TEST_ADD_BASIC')) {
+            $this->context->buildViolation($constraint->message)
+                ->addViolation();
+        }
     }
 }
